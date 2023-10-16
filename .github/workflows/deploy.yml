@@ -39,7 +39,6 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-              ls -al ~/node-cicd
               cd ~/node-cicd
               git pull origin main
               touch .env
