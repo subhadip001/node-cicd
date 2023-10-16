@@ -39,11 +39,6 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-              curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
-              . ~/.nvm/nvm.sh
-
-              nvm install 18
-              npm install -g pm2
               cd ~/node-cicd
               git pull origin main
               touch .env
