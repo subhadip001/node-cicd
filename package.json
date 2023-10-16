@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
     "dev": "nodemon index.js",
-    "build": "ncc build index.js -o dist"
-  },
+    "build": "ncc build index.js -o dist",
+    "start:prod": "node dist/index.js"
+  },  
   "keywords": [],
   "author": "",
   "license": "ISC",

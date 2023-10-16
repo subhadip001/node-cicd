@@ -32,13 +32,13 @@ jobs:
     
     steps:
       - name: Deploy to EC2
-        uses: appleboy/scp-action@master
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          script: |
+          run: |
              curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
               . ~/.nvm/nvm.sh
 
@@ -50,5 +50,5 @@ jobs:
               echo ${{secrets.ENV_FILE}} >> .env
               npm install
               npm run build
-              pm2 start index.js --name="node-cicd-api"
+              pm2 start npm --name node-cicd-api -- run start:prod
           
