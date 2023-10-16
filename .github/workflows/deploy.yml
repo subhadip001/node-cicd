@@ -32,13 +32,14 @@ jobs:
     
     steps:
       - name: Deploy to EC2
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v1
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
+              ls -al ~/node-cicd
               cd ~/node-cicd
               git pull origin main
               touch .env
