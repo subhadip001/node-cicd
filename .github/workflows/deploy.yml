@@ -45,6 +45,6 @@ jobs:
               echo ${{secrets.ENV_FILE}} >> .env
               npm install
               npm run build
-              pm2 start npm --name node-cicd-api -- run start:prod
+              pm2 restart node-cicd-api
 
           
