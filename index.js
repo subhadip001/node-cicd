@@ -1,6 +1,10 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
+
 require("dotenv").config();
+
+app.use(bodyParser.json());
 
 const PORT = process.env.PORT;
 
@@ -15,5 +19,5 @@ app.post("/name", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is running on port 8080${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
