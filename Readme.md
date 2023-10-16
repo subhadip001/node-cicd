@@ -5,7 +5,7 @@
 -   STEP1 - Login to AWS console and create EC2 instance
 -   STEP2 - Setup GitHub Repo and Push your project
 -   STEP3 - Login to EC2 instance
--   STEP4 - Install nodejs and nginx on EC2 instance , Config nginx and     restart it
+-   STEP4 - Install nodejs and nginx on EC2 instance 
     ```bash
     sudo apt update
 
@@ -20,7 +20,16 @@
     sudo apt-get install -y nodejs
 
     sudo apt-get install -y nginx
-    
+
+-   STEP5 - Clone your project from GitHub & Check the files
+    ```bash
+    git clone <url>
+    cd <project-name>
+    ls -a
+    ```
+
+-   STEP6 - Config nginx and restart it
+    ```bash
     sudo nano /etc/nginx/sites-available/default
 
     location / {
@@ -34,28 +43,28 @@
     sudo systemctl restart nginx
     ```
 
--   STEP5 - Install pm2
+-   STEP7 - Install pm2
     ```bash
     sudo npm i -g pm2
     ```
 
--   STEP6 - Run backend api in the background as a service using pm2
+-   STEP8 - Run backend api in the background as a service using pm2
     ```bash
     pm2 start npm --name node-cicd-api -- run start:prod
     ```
     
--   STEP7 - Generate ed25519 key & Add ed25519 key into Authorized keys
+-   STEP9 - Generate ed25519 key & Add ed25519 key into Authorized keys
     ```bash
     ssh-keygen -t ed25519 -a 200 -C "your_email@example.com"
     cat .ssh/cicd.pub >> ~/.ssh/authorized_keys
     ```
 
- -   STEP6 - Add PORT=22 , HOST=public ip , USER=ubuntu , KEY=private key and env vars in GitHub Secrets
+-   STEP10 - Add PORT=22 , HOST=public ip , USER=ubuntu , KEY=private key and env vars in GitHub Secrets
 
- -   STEP7 - Add the command in yml script of project to restart the nodejs api server after every push to the repo
+-   STEP11 - Add the command in yml script of project to restart the nodejs api server after every push to the repo
 
  
- ##  Installing Free SSL
+##  Installing Free SSL
 
 ####  Installing Certbot
 
