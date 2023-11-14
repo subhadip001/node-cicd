@@ -66,6 +66,11 @@
  
 ##  Installing Free SSL
 
+#### DNS Configuration
+
+Go to your Domain Provider and configure DNS (A name / C name ) pointing to the ip of the machine.
+Run and Check The domain is working or not.
+
 ####  Installing Certbot
 
 ```sh
