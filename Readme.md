@@ -21,7 +21,7 @@
 
     sudo apt-get install -y nginx
 
--   STEP5 - Clone your project from GitHub & Check the files
+-   STEP5 - Clone your project from GitHub & Check the files (For Public Repo)
     ```bash
     git clone <url>
     cd <project-name>
@@ -62,6 +62,8 @@
 -   STEP10 - Add PORT=22 , HOST=public ip , USER=ubuntu , KEY=private key and env vars in GitHub Secrets
 
 -   STEP11 - Add the command in yml script of project to restart the nodejs api server after every push to the repo
+
+-   NOTE - For Private repo before STEP5 Generate your Key with STEP9 command and add the Public key to Deploy Keys of Repo (Name = SSH_KEY)
 
  
 ##  Installing Free SSL
